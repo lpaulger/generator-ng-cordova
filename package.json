@@ -1,0 +1,37 @@
+{
+  "name": "generator-ng-cordova",
+  "version": "0.0.0",
+  "description": "Yeoman Cordova generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "lpaulger/generator-ng-cordova",
+  "author": {
+    "name": "Lucas Paulger",
+    "email": "lucas.paulger@gmail.com",
+    "url": "https://github.com/lpaulger"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "cordova": "~3.1.0",
+    "plugman": "~0.10.0",
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
