@@ -3,5 +3,5 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-lp-cordova' ]; then cd .. && eval "mv $currentfolder generator-lp-cordova" && cd generator-lp-cordova; fi
+  - if [ "$currentfolder" != 'generator-ng-cordova' ]; then cd .. && eval "mv $currentfolder generator-ng-cordova" && cd generator-ng-cordova; fi
 
