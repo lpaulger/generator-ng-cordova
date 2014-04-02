@@ -3,14 +3,14 @@
 var path = require('path');
 var helpers = require('yeoman-generator').test;
 
-describe('lp-cordova generator', function () {
+describe('ng-cordova generator', function () {
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('lp-cordova:app', [
+      this.app = helpers.createGenerator('ng-cordova:app', [
         '../../app'
       ]);
       done();
