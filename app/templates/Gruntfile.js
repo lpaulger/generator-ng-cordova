@@ -9,6 +9,9 @@
 
 module.exports = function (grunt) {
 
+  // Load cordova
+  var cordova = require('cordova');
+
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -449,22 +452,79 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-  grunt.registerTask('build', [
-    'clean:dist',
-    'bowerInstall',
-    'useminPrepare',
-    'concurrent:dist',
-    'autoprefixer',
-    'concat',
-    'ngmin',
-    'copy:dist',
-    'cdnify',
-    'cssmin',
-    'uglify',
-    'rev',
-    'usemin',
-    'htmlmin'
-  ]);
+  grunt.registerTask('build', function (target){
+    var done = this.async();
+    grunt.log.write('use build:platform (all || nothing will build all platforms)');
+    if(target === undefined){
+      grunt.task.run([
+        'clean:dist',
+        'bowerInstall',
+        'useminPrepare',
+        'concurrent:dist',
+        'autoprefixer',
+        'concat',
+        'ngmin',
+        'copy:dist',
+        'cdnify',
+        'cssmin',
+        'uglify',
+        'rev',
+        'usemin',
+        'htmlmin'
+      ]);
+      cordova.build(done);
+    } else {
+      cordova.build(target, done);
+    }
+  });
+
+  grunt.registerTask('run', function (target){
+     grunt.log.writeln([
+      'for use with an actual device.',
+      'ensure proper installation of sdk\'s and applications (Xcode, android SDK)',
+      'use run:platform (ios, android)']);
+    if (!target || target === 'all') {
+      // Build all platforms
+      cordova.run();
+    } else {
+      cordova.run(target);
+    }
+
+    done();
+  });
+
+  grunt.registerTask('emulate', 'Cordova emulation tasks', function (target) {
+    grunt.log.write('ensure proper installation of sdk\'s and applications (Xcode, android SDK)');
+    grunt.log.write('use emulate:platform (ios, android)');
+    var done = this.async();
+
+    if (!target || target === 'all') {
+        // Emulate all platforms
+        cordova.emulate();
+    } else {
+        if (target === 'ios') {
+            grunt.task.run('shell:iossimstart');
+        } else {
+            cordova.emulate(target, function() {
+                grunt.task.run('cordova-emulate-end');
+            });
+        }
+    }
+
+    done();
+  });
+
+  grunt.registerTask('ripple', 'Cordova ripple tasks', function (target) {
+            var done = this.async();
+
+            if (!target || target === 'all') {
+                // Emulate all platforms
+                grunt.fatal("Platform Requied! use ripple:platform (ios, android)");
+            } else {
+                cordova.ripple(target);
+                done();
+            }
+        });
 
   grunt.registerTask('default', [
     'newer:jshint',

@@ -1,4 +1,4 @@
-# generator-lp-cordova [![Build Status](https://secure.travis-ci.org/lpaulger/generator-lp-cordova.png?branch=master)](https://travis-ci.org/lpaulger/generator-lp-cordova)
+# generator-ng-cordova [![Build Status](https://secure.travis-ci.org/lpaulger/generator-ng-cordova.png?branch=master)](https://travis-ci.org/lpaulger/generator-ng-cordova)
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -23,16 +23,16 @@ $ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-lp-cordova from npm, run:
+To install generator-ng-cordova from npm, run:
 
 ```
-$ npm install -g generator-lp-cordova
+$ npm install -g generator-ng-cordova
 ```
 
 Finally, initiate the generator:
 
 ```
-$ yo lp-cordova
+$ yo ng-cordova
 ```
 
 ### Getting To Know Yeoman

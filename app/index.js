@@ -7,7 +7,7 @@ var cordovaCLI = require('cordova');
 var plugman = require('plugman');
 var chalk = require('chalk');
 
-var LpCordovaGenerator = yeoman.generators.Base.extend({
+var NgCordovaGenerator = yeoman.generators.Base.extend({
   init: function () {
     this.pkg = require('../package.json');
 
@@ -55,7 +55,7 @@ var LpCordovaGenerator = yeoman.generators.Base.extend({
     this.log(this.yeoman);
 
     // replace it with a short and sweet description of your generator
-    this.log(chalk.magenta('You\'re using the fantastic LpCordova generator.'));
+    this.log(chalk.magenta('You\'re using the fantastic NgCordova generator.'));
 
     var prompts = [{
       type: 'input',
@@ -265,9 +265,12 @@ var LpCordovaGenerator = yeoman.generators.Base.extend({
 
     this.ngRoute = this.env.options.ngRoute;
 
-    this.mkdir('www');
+    //delete cordova generated files
+    fs.unlink('www/index.html');
+    deleteFolderRecursive('www/css');
+    deleteFolderRecursive('www/img');
+    deleteFolderRecursive('www/js');
 
-    fs.unlink('www/index.html');//delete cordova generated index.html
     this.template('_index.html', 'www/index.html');
     this.template('scripts/_init.js', 'www/scripts/init.js');
     this.template('scripts/_app.js', 'www/scripts/app.js');
@@ -287,4 +290,18 @@ var LpCordovaGenerator = yeoman.generators.Base.extend({
   }
 });
 
-module.exports = LpCordovaGenerator;
+module.exports = NgCordovaGenerator;
+
+var deleteFolderRecursive = function(path) {
+  if( fs.existsSync(path) ) {
+    fs.readdirSync(path).forEach(function(file,index){
+      var curPath = path + "/" + file;
+      if(fs.lstatSync(curPath).isDirectory()) { // recurse
+        deleteFolderRecursive(curPath);
+      } else { // delete file
+        fs.unlinkSync(curPath);
+      }
+    });
+    fs.rmdirSync(path);
+  }
+};

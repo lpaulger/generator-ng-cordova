@@ -23,10 +23,11 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "cordova": "~3.1.0",
-    "plugman": "~0.10.0",
+    "cordova": ">=3.1.0",
+    "plugman": ">=0.10.0",
     "yeoman-generator": "~0.16.0",
-    "chalk": "~0.4.0"
+    "chalk": "~0.4.0",
+    "generator-karma": ">=0.6.0"
   },
   "devDependencies": {
     "mocha": "*"
