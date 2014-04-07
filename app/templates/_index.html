@@ -23,6 +23,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <h1><%= appname %></h1>
     <% if (ngRoute) {
       %><div class="container" ng-view></div><%
     } else {
@@ -49,5 +50,10 @@
     <!-- bower:js -->
     <!-- endbower -->
     <!-- endbuild -->
+    <script type="text/javascript" src="scripts/app.js"></script>
+    
+    <script type="text/javascript" src="scripts/controllers/MainCtrl.js"></script>
+    
+    <script type="text/javascript" src="scripts/init.js"></script>
   </body>
 </html>

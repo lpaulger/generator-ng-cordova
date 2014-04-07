@@ -1,46 +1,46 @@
 # generator-ng-cordova [![Build Status](https://secure.travis-ci.org/lpaulger/generator-ng-cordova.png?branch=master)](https://travis-ci.org/lpaulger/generator-ng-cordova)
 
-> [Yeoman](http://yeoman.io) generator
-
-
 ## Getting Started
 
-### What is Yeoman?
+### What is ng-cordova?
 
-Trick question. It's not a thing. It's this guy:
+Since my creation of [https://github.com/lpaulger/timerApp](https://github.com/lpaulger/timerApp) I've been wanting to create an angular, phonegap/cordova generator for yeoman and here it is!
 
-![](http://i.imgur.com/JHaAlBJ.png)
+### Installation Steps
+1. Install Yeoman
+  
+  ```
+  $ npm install -g yo
+  ```
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
+2. Install the generator 
+  
+  ```
+  $ npm install -g generator-ng-cordova
+  ```
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+2. In the directory you want to install the app run 'yo ng-cordova'
+3. follow the steps within the generator
+4. You're done! 
 
+### Post Installation
+
+Once you've gone through the installation, you can start developing your app. 
+
+Use 'grunt serve' to view the app in the browser (with livereload)
+Use 'grunt run:android' to run on a device
+Use 'grunt emulate:android' to run in an emulated device (assuming you've set one up)
+
+### Get Involved
+
+I'll keep expanding this project to be more flexible. I know other frameworks, tools and generators exist. for example check out [IonicFramework](ionicframework.com) for some powerful UI enhancements for angular and phonegap. I decide to stay away from this to help developers create their own UI experience. If you want a generator and the Ionic experience check out [generator-angular-cordova](https://www.npmjs.org/package/generator-angular-cordova).
+
+I support unit tests! they are run [here](http://travis-ci.org/lpaulger/generator-ng-cordova) [![Build Status](https://secure.travis-ci.org/lpaulger/generator-ng-cordova.png?branch=master)](https://travis-ci.org/lpaulger/generator-ng-cordova). If you care to contribute make sure the tests pass locally by running
 ```
-$ npm install -g yo
+$ npm test
 ```
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-ng-cordova from npm, run:
-
-```
-$ npm install -g generator-ng-cordova
-```
-
-Finally, initiate the generator:
-
-```
-$ yo ng-cordova
-```
-
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
+Best of luck!
 
 ## License
 

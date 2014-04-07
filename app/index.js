@@ -60,7 +60,7 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'appName',
-      message: 'Name your application [camelCase] (nameApp)',
+      message: 'Name your application',
       required: true
     },{
       type: 'confirm',
@@ -206,7 +206,12 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
     console.log("Creating cordova app: " + this.appname);
     var cb = this.async();
     try {
-        cordovaCLI.create(process.cwd(), this.packagename, this.appname, cb);
+        cordovaCLI.create(process.cwd() + '/' + this.appname, this.packagename, this.appname, function(){
+
+          process.chdir(process.cwd() +'/' + this.appname);
+
+          cb();
+        }.bind(this));
     } catch (err) {
         console.error('Failed to create cordova proect: ' + err);
         process.exit(1);
@@ -226,7 +231,7 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
           addPluginsToCordova(index + 1, plugins, cb);
       });
     }
-    console.log('Installing the Cordova plugins');
+    console.log('Installing the Cordovplugins');
 
     var cb = this.async();
 
