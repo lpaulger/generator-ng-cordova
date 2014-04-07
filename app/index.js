@@ -88,7 +88,6 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
 
     var platform = process.platform;
 
-    console.log(platform);
     var prompts = [{
       type: 'checkbox',
       name: 'platforms',

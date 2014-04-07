@@ -21,7 +21,7 @@ Since my creation of [https://github.com/lpaulger/timerApp](https://github.com/l
 
 2. In the directory you want to install the app run 'yo ng-cordova'
 3. follow the steps within the generator
-4. You're done! 
+4. You're done! just 'cd' into the application folder
 
 ### Post Installation
 

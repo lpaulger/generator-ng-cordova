@@ -516,18 +516,6 @@ module.exports = function (grunt) {
     done();
   });
 
-  grunt.registerTask('ripple', 'Cordova ripple tasks', function (target) {
-            var done = this.async();
-
-            if (!target || target === 'all') {
-                // Emulate all platforms
-                grunt.fatal("Platform Requied! use ripple:platform (ios, android)");
-            } else {
-                cordova.ripple(target);
-                done();
-            }
-        });
-
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
