@@ -10,16 +10,6 @@ describe('ng-cordova generator', function () {
         return done(err);
       }
 
-      var deps = [
-        '../../app',
-        '../../common',
-        '../../controller',
-        '../../main', [
-          helpers.createDummyGenerator(),
-          'karma:app'
-        ]
-      ];
-
       this.app = helpers.createGenerator('ng-cordova:app', [
         '../../app', [
           helpers.createDummyGenerator(),
@@ -35,8 +25,19 @@ describe('ng-cordova generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       // add files you expect to exist here.
+      'www/index.html',
+      'www/views/main.html',
+      'www/scripts/controllers/MainCtrl.js',
+      'www/scripts/init.js',
+      'www/scripts/app.js',
+      'www/styles/main.scss',
+      '.bowerrc',
+      '.editorconfig',
       '.jshintrc',
-      '.editorconfig'
+      'bower.json',
+      'config.xml',
+      'Gruntfile.js',
+      'package.json'
     ];
 
     helpers.mockPrompt(this.app, {
