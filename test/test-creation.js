@@ -10,9 +10,24 @@ describe('ng-cordova generator', function () {
         return done(err);
       }
 
+      var deps = [
+        '../../app',
+        '../../common',
+        '../../controller',
+        '../../main', [
+          helpers.createDummyGenerator(),
+          'karma:app'
+        ]
+      ];
+
       this.app = helpers.createGenerator('ng-cordova:app', [
-        '../../app'
+        '../../app', [
+          helpers.createDummyGenerator(),
+          'karma:app'
+        ]
       ]);
+
+      this.app.options['skip-install'] = true;
       done();
     }.bind(this));
   });
@@ -25,9 +40,14 @@ describe('ng-cordova generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      appName: ['testApp'],
+      coffee: [false],
+      compass: [true],
+      platforms: [],
+      plugins: [],
+      modules: []
     });
-    this.app.options['skip-install'] = true;
+
     this.app.run({}, function () {
       helpers.assertFile(expected);
       done();

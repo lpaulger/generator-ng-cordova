@@ -479,6 +479,8 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('run', function (target){
+    var done = this.async();
+
      grunt.log.writeln([
       'for use with an actual device.',
       'ensure proper installation of sdk\'s and applications (Xcode, android SDK)',

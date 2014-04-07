@@ -115,7 +115,7 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
 
     this.log(chalk.magenta('Here are some basic plugins by Cordova, for others please check out http://plugins.cordova.io/'));
 
-    var prompts = [{
+    var plugins = [{
       type: 'checkbox',
       name: 'plugins',
       message: 'Which Cordova plugins would you like to use?',
@@ -138,7 +138,7 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
       }]
     }];
 
-    this.prompt(prompts, function (props) {
+    this.prompt(plugins, function (props) {
       this.plugins = props.plugins;
       done();
     }.bind(this));
@@ -147,7 +147,7 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
   askForModules: function() {
     var cb = this.async();
 
-    var prompts = [{
+    var modules = [{
       type: 'checkbox',
       name: 'modules',
       message: 'Which modules would you like to include?',
@@ -170,7 +170,7 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
       }]
     }];
 
-    this.prompt(prompts, function (props) {
+    this.prompt(modules, function (props) {
       var hasMod = function (mod) { return props.modules.indexOf(mod) !== -1; };
       this.resourceModule = hasMod('resourceModule');
       this.cookiesModule = hasMod('cookiesModule');
@@ -229,6 +229,9 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
     console.log('Installing the Cordova plugins');
 
     var cb = this.async();
+
+    console.log(this.appname);
+
     addPluginsToCordova(0, this.plugins, cb);
   },
 
