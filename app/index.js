@@ -230,9 +230,8 @@ var NgCordovaGenerator = yeoman.generators.Base.extend({
 
     var cb = this.async();
 
-    console.log(this.appname);
-
-    addPluginsToCordova(0, this.plugins, cb);
+    if(this.plugins && this.plugins.length > 0) addPluginsToCordova(0, this.plugins, cb);
+    else cb();
   },
 
    installPlatforms: function(){
