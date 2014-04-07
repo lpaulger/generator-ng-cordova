@@ -1,7 +1,15 @@
 {
   "name": "generator-ng-cordova",
   "version": "0.0.0",
-  "description": "Yeoman Cordova generator",
+  "description": "Yeoman Phonegap/Cordova and Angular generator",
+  "keywords": [
+    "yeoman-generator",
+    "cordova",
+    "phonegap",
+    "front-end",
+    "app",
+    "angular"
+  ],
   "license": "MIT",
   "main": "app/index.js",
   "repository": "lpaulger/generator-ng-cordova",
@@ -30,7 +38,15 @@
     "generator-karma": ">=0.6.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-conventional-changelog": "~1.1.0",
+    "grunt-release": "~0.6.0",
+    "load-grunt-tasks": "~0.3.0",
+    "marked": "~0.2.8",
+    "mocha": "*",
+    "semver": "~2.2.1",
+    "underscore.string": "~2.3.1"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
