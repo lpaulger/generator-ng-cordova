@@ -1,4 +1,4 @@
-# generator-ng-cordova [![Build Status](https://secure.travis-ci.org/lpaulger/generator-ng-cordova.png?branch=master)](https://travis-ci.org/lpaulger/generator-ng-cordova)
+# generator-ng-cordova [![Build Status](https://secure.travis-ci.org/lpaulger/generator-ng-cordova.png?branch=master)](https://travis-ci.org/exBerliners/generator-ng-cordova)
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ Use 'grunt emulate:android' to run in an emulated device (assuming you've set on
 
 I'll keep expanding this project to be more flexible. I know other frameworks, tools and generators exist. for example check out [IonicFramework](ionicframework.com) for some powerful UI enhancements for angular and phonegap. I decide to stay away from this to help developers create their own UI experience. If you want a generator and the Ionic experience check out [generator-angular-cordova](https://www.npmjs.org/package/generator-angular-cordova).
 
-I support unit tests! they are run [here](http://travis-ci.org/lpaulger/generator-ng-cordova) [![Build Status](https://secure.travis-ci.org/lpaulger/generator-ng-cordova.png?branch=master)](https://travis-ci.org/lpaulger/generator-ng-cordova). If you care to contribute make sure the tests pass locally by running
+I support unit tests! they are run [here](http://travis-ci.org/exBerliners/generator-ng-cordova) [![Build Status](https://secure.travis-ci.org/lpaulger/generator-ng-cordova.png?branch=master)](https://travis-ci.org/lpaulger/generator-ng-cordova). If you care to contribute make sure the tests pass locally by running
 ```
 $ npm test
 ```
